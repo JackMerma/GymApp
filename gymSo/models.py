@@ -9,4 +9,5 @@ class Destination:
     desc: str
     price: int 
     trainer: str 
+    class_css: str
 

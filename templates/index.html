@@ -200,53 +200,23 @@ https://www.tooplate.com/view/2119-gymso-fitness
                                 <h2 data-aos="fade-up" data-aos-delay="200">Our Training Classes</h2>
                              </div>
 
-                            <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
-                                <div class="class-thumb">
-                                  <img src="{% static 'images/class/yoga-class.jpg' %}" class="img-fluid" alt="Class">
-
-                                    <div class="class-info">
-                                      <h3 class="mb-1">{{dest1.name}}</h3>
-
-                                      <span><strong>Trained by</strong> - {{dest1.trainer}}</span>
-
-                                        <span class="class-price">${{dest1.price}}</span>
-
-                                        <p class="mt-3">{{dest1.desc}}</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-5 mt-lg-0 mt-md-0 col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
+                            {% for dest in dests %}
+                            <div class="{{dest.class_css}}" data-aos="fade-up" data-aos-delay="500">
                                 <div class="class-thumb">
                                   <img src="{% static 'images/class/crossfit-class.jpg' %}" class="img-fluid" alt="Class">
 
                                     <div class="class-info">
-                                      <h3 class="mb-1">{{dest2.name}}</h3>
+                                      <h3 class="mb-1">{{dest.name}}</h3>
 
-                                      <span><strong>Trained by</strong> - {{dest2.trainer}}</span>
+                                      <span><strong>Trained by</strong> - {{dest.trainer}}</span>
 
-                                      <span class="class-price">${{dest2.price}}</span>
+                                      <span class="class-price">${{dest.price}}</span>
 
-                                      <p class="mt-3">{{dest2.desc}}</p>
+                                      <p class="mt-3">{{dest.desc}}</p>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="mt-5 mt-lg-0 col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
-                                <div class="class-thumb">
-                                  <img src="{% static 'images/class/cardio-class.jpg' %}" class="img-fluid" alt="Class">
-
-                                    <div class="class-info">
-                                      <h3 class="mb-1">{{dest3.name}}</h3>
-
-                                      <span><strong>Trained by</strong> - {{dest3.trainer}}</span>
-
-                                      <span class="class-price">${{dest3.price}}</span>
-
-                                      <p class="mt-3">{{dest3.desc}}</p>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
 
                     </div>
                </div>
