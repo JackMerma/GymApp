@@ -6,4 +6,5 @@ from .models import Destination
 def home(request):
 
     dest1 = Destination() 
-    return render(request, "index.html", {'dest1', dest1})
+    dest1.name="Yoga"
+    return render(request, "index.html", {'dest1': dest1})
