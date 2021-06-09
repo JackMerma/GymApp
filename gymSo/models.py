@@ -9,3 +9,13 @@ class Curso(models.Model):
     price = models.IntegerField()
     trainer = models.CharField(max_length=100)
 
+class Responsable(models.Model):
+    name = models.CharField(max_length=100)
+    lastName = models.CharField(max_length=100)
+    edad = models.IntegerField()
+    area = models.ForeignKey(Curso, on_delete=models.CASCADE)
+    delegacion = models.TextField()
+    twitter = models.TextField()
+    facebook = models.TextField()
+    instagram = models.TextField()
+
