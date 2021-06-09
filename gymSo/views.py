@@ -7,4 +7,6 @@ def home(request):
 
     dest1 = Destination() 
     dest1.name="Yoga"
+    dest1.trainer="Bella"
+    dest1.price="55"
     return render(request, "index.html", {'dest1': dest1})
