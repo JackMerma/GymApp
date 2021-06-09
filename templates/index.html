@@ -1,4 +1,5 @@
 {% load static %}
+{% static "images/class/" as baseURL %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -203,7 +204,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
                             {% for dest in dests %}
                             <div class="{{dest.class_css}}" data-aos="fade-up" data-aos-delay="500">
                                 <div class="class-thumb">
-                                  <img src="{% static 'images/class/crossfit-class.jpg' %}" class="img-fluid" alt="Class">
+                                  <img src="{{baseURL}}/{{dest.img}}" class="img-fluid" alt="Class">
 
                                     <div class="class-info">
                                       <h3 class="mb-1">{{dest.name}}</h3>
