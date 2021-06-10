@@ -15,9 +15,14 @@ def register(request):
         email = request.POST['email']
 
         if password1 == password2:
-            user = User.objects.create(username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
-            user.save()
-            print('usuario creado')
+            if User.objects.filter(username=username).exists():
+                print("Ya existe este usuario")
+            elif User.objects.filter(email=email).exists():
+                print("Ya existe el email")
+            else:
+                user = User.objects.create(username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
+                user.save()
+                print('usuario creado')
         else:
             print("La contraseña no coincide...")
 
