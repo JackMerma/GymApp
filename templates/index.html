@@ -150,14 +150,15 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
                             </div>
 
+                            {% for respon in responsables %}
                             <div class="ml-lg-auto col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="700">
                                 <div class="team-thumb">
-                                  <img src="{% static 'images/team/team-image.jpg' %}" class="img-fluid" alt="Trainer">
+                                  <img src="{{respon.img.url}}" class="img-fluid" alt="Trainer">
 
                                     <div class="team-info d-flex flex-column">
 
-                                        <h3>Mary Yan</h3>
-                                        <span>Yoga Instructor</span>
+                                      <h3>{{respon.name}}</h3>
+                                      <span>{{respon.delegacion}} en {{respon.area.name}}</span>
 
                                         <ul class="social-icon mt-3">
                                             <li><a href="#" class="fa fa-twitter"></a></li>
@@ -166,23 +167,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="mr-lg-auto mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="800">
-                                <div class="team-thumb">
-                                  <img src="{% static 'images/team/team-image01.jpg' %}" class="img-fluid" alt="Trainer">
-
-                                    <div class="team-info d-flex flex-column">
-
-                                        <h3>Catherina</h3>
-                                        <span>Body trainer</span>
-
-                                        <ul class="social-icon mt-3">
-                                            <li><a href="#" class="fa fa-instagram"></a></li>
-                                            <li><a href="#" class="fa fa-facebook"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
 
                     </div>
                </div>
