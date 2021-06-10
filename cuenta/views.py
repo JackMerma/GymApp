@@ -37,7 +37,7 @@ def register(request):
                 messages.info(request, "El email ya existe")
                 return redirect('register')
             else:
-                user = User.objects.create(username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
+                user = User.objects.create_user(username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
                 user.save()
                 return redirect('login')
         else:
@@ -47,3 +47,8 @@ def register(request):
         return redirect('/')
     else:
         return render(request, 'register.html', {}) 
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
