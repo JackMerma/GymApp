@@ -15,6 +15,7 @@ class Responsable(models.Model):
     edad = models.IntegerField()
     area = models.ForeignKey(Curso, on_delete=models.CASCADE)
     delegacion = models.TextField()
+    img = models.ImageField(upload_to='perfilTrainer')
     twitter = models.TextField()
     facebook = models.TextField()
     instagram = models.TextField()
