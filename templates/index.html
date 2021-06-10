@@ -429,9 +429,14 @@
 
           <div class="modal-body">
             <form class="membership-form webform" role="form">
+              {% csrf_token %}
+              {% if user.is_authenticated %}
+              <input type="text" class="form-control" name="cf-name" value="{{user.first_name}} {{user.last_name}}">
+              <input type="email" class="form-control" name="cf-email" value="{{user.email}}">
+              {% else %}
               <input type="text" class="form-control" name="cf-name" placeholder="John Doe">
-
               <input type="email" class="form-control" name="cf-email" placeholder="Johndoe@gmail.com">
+              {% endif %}
 
               <input type="tel" class="form-control" name="cf-phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
 
