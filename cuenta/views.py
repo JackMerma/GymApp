@@ -6,7 +6,19 @@ from django.contrib import messages
 
 # Create your views here.
 def login(request):
-    pass
+    if request.method=='POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username, password=password)
+
+        if user is no None:
+            auth.login(request, user)
+            return redirect("/")
+        else:
+            messages.info(request, "Datos inválidos")
+            return redirect('login')
+    else:
+        return render(request, 'register.html', {}) 
 def register(request):
 
     if request.method == 'POST':
@@ -27,7 +39,7 @@ def register(request):
             else:
                 user = User.objects.create(username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
                 user.save()
-                print('usuario creado')
+                return redirect('login')
         else:
             messages.info(request, "La contraseña no coincide")
             return redirect('register')
