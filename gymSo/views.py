@@ -9,3 +9,4 @@ def home(request):
     responsables = Responsable.objects.all() 
 
     return render(request, "index.html", {'cursos': cursos, 'responsables': responsables})
+
