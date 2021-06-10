@@ -200,19 +200,19 @@ https://www.tooplate.com/view/2119-gymso-fitness
                                 <h2 data-aos="fade-up" data-aos-delay="200">Our Training Classes</h2>
                              </div>
 
-                            {% for dest in dests %}
+                            {% for curso in cursos %}
                             <div class="mt-5 mt-lg-0 col-lg-4 col-md-6 col-12 aos-init aos-animate" data-aos="fade-up" data-aos-delay="500">
                                 <div class="class-thumb">
-                                  <img src="{{dest.img.url}}" class="img-fluid" alt="Class">
+                                  <img src="{{curso.img.url}}" class="img-fluid" alt="Class">
 
                                     <div class="class-info">
-                                      <h3 class="mb-1">{{dest.name}}</h3>
+                                      <h3 class="mb-1">{{curso.name}}</h3>
 
-                                      <span><strong>Trained by</strong> - {{dest.trainer}}</span>
+                                      <span><strong>Trained by</strong> - {{curso.trainer}}</span>
 
-                                      <span class="class-price">${{dest.price}}</span>
+                                      <span class="class-price">${{curso.price}}</span>
 
-                                      <p class="mt-3">{{dest.desc}}</p>
+                                      <p class="mt-3">{{curso.desc}}</p>
                                     </div>
                                 </div>
                             </div>

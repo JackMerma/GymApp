@@ -5,6 +5,6 @@ from .models import Curso
 # Create your views here.
 def home(request):
 
-    dests = Curso.objects.all()
+    cursos = Curso.objects.all()
 
-    return render(request, "index.html", {'dests': dests})
+    return render(request, "index.html", {'cursos': cursos})
