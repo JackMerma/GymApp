@@ -58,6 +58,15 @@
 			  <a href="#contact" class="nav-link smoothScroll">Contact</a>
 			</li>
 
+
+            {% if user.is_authenticated %}
+			<li class="nav-item">
+			  <a href="cuenta/logout" class="nav-link smoothScroll">Logout</a>
+			</li>
+			<li class="nav-item">
+              <p class="nav-link smoothScroll">Hola, {{user.first_name}}</p>
+			</li>
+            {% else %}
 			<li class="nav-item">
 			  <a href="cuenta/register" class="nav-link smoothScroll">Register</a>
 			</li>
@@ -65,6 +74,7 @@
 			<li class="nav-item">
 			  <a href="cuenta/login" class="nav-link smoothScroll">Login</a>
 			</li>
+            {% endif %}
 		  </ul>
 
 		  <ul class="social-icon ml-lg-3">
