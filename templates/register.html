@@ -41,12 +41,17 @@
 	  </div>
 	</section>
 
-	<!-- SCRIPTS -->
-	<script src="{% static 'js/jquery.min.js' %}"></script>
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
-	<script src="{% static 'js/aos.js' %}"></script>
-	<script src="{% static 'js/smoothscroll.js' %}"></script>
-	<script src="{% static 'js/custom.js' %}"></script>
+    <div>
+      {% for message in messages %}
+      <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="100">{{message}}</h2>
+      {% endfor %}
+    </div>
+    <!-- SCRIPTS -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
 
   </body>
 </html>
