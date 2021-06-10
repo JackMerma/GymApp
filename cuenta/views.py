@@ -11,14 +11,14 @@ def login(request):
         password = request.POST['password']
         user = auth.authenticate(username=username, password=password)
 
-        if user is no None:
+        if user is not None:
             auth.login(request, user)
             return redirect("/")
         else:
             messages.info(request, "Datos inválidos")
             return redirect('login')
     else:
-        return render(request, 'register.html', {}) 
+        return render(request, 'login.html', {}) 
 def register(request):
 
     if request.method == 'POST':
