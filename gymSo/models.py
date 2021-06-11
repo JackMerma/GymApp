@@ -7,7 +7,9 @@ class Curso(models.Model):
     img = models.ImageField(upload_to='pics')
     desc = models.TextField()
     price = models.IntegerField()
-    trainer = models.CharField(max_length=100)
+    #trainer = models.CharField(max_length=100)
+    #others -> dias de imparticion, trainers, hora inicio, fin 
+    days = models.DateField()
 
 class Responsable(models.Model):
     name = models.CharField(max_length=100)
